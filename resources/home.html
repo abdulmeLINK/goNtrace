@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Go & Trace</title>
+    <link rel="stylesheet" href="public/style.css" />
+    <script>
+      function traceroute() {
+        var ip = document.getElementById("domainInput").value;
+        fetch("/map?ip=" + ip)
+          .then((response) => response.blob())
+          .then((blob) => {
+            var img = document.createElement("img");
+            img.src = URL.createObjectURL(blob);
+            document.getElementById("tracerouteResult").appendChild(img);
+          })
+          .catch((error) => console.error(error));
+      }
+    </script>
+  </head>
+  <body>
+    <div>
+      <label for="domainInput">Domain Name</label>
+      <input type="text" id="domainInput" placeholder="example.com" />
+      <button onclick="traceroute()">Traceroute</button>
+    </div>
+    <hr />
+
+    <div id="tracerouteResult"></div>
+  </body>
+</html>
