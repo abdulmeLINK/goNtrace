@@ -66,6 +66,7 @@ This project is licensed under the MIT License.
 
 ## TODO
 
+- [ ] Use comments and godoc together to auto document the project
 - [ ] Use Interactive Map feature for the frontend.
 - [ ] Add labels to the markers on the map.
 - [ ] Implement a better geolocator to show every IP address location with better accuracy.
