@@ -66,7 +66,8 @@ This project is licensed under the MIT License.
 
 ## TODO
 
-- [ ] Use Google Maps for the frontend.
+- [ ] Use Interactive Map feature for the frontend.
 - [ ] Add labels to the markers on the map.
 - [ ] Implement a better geolocator to show every IP address location with better accuracy.
 - [ ] Add security checks for the `TraceRouteWithMTR` function.
+- [ ] Show markers with colors to indicate its role (start IP, destination)
