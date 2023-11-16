@@ -1,33 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Go & Trace</title>
-    <link rel="stylesheet" href="public/style.css" />
+    <link rel="stylesheet" href="public/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script>
-      function traceroute() {
-        var ip = document.getElementById("domainInput").value;
-        fetch("/map?ip=" + ip)
-          .then((response) => response.blob())
-          .then((blob) => {
-            var img = document.createElement("img");
-            img.src = URL.createObjectURL(blob);
-            document.getElementById("tracerouteResult").appendChild(img);
-          })
-          .catch((error) => console.error(error));
-      }
+        function traceroute() {
+            var ip = document.getElementById("domainInput").value;
+            fetch("/map?ip=" + ip)
+                .then((response) => response.blob())
+                .then((blob) => {
+                    var img = document.createElement("img");
+                    img.src = URL.createObjectURL(blob);
+                    document.getElementById("tracerouteResult").appendChild(img);
+                })
+                .catch((error) => console.error(error));
+        }
     </script>
-  </head>
-  <body>
-    <div>
-      <label for="domainInput">Domain Name</label>
-      <input type="text" id="domainInput" placeholder="example.com" />
-      <button onclick="traceroute()">Traceroute</button>
+</head>
+<body>
+    <div class="container">
+        <label for="domainInput">Domain Name</label>
+        <input type="text" id="domainInput" placeholder="example.com">
+        <button onclick="traceroute()">Traceroute</button>
     </div>
-    <hr />
-
+    <hr class="styled-hr">
     <div id="tracerouteResult"></div>
-  </body>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="https://github.com/abdulmeLINK" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github"></i> Abdulmelik Saylan
+            </a>
+            <a href="https://github.com/sametk0ca" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github"></i> Samet Koca
+            </a>
+        </div>
+    </footer>
+</body>
 </html>
