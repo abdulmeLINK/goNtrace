@@ -4,17 +4,30 @@ import (
 	"flag"
 	"fmt"
 	"net/http"
+	"os"
 
 	"github.com/abdulmeLINK/goNtrace/api"
 	"github.com/abdulmeLINK/goNtrace/pkg"
 	"github.com/gorilla/mux"
 )
 
+func ensureDirExists(dir string) {
+	if _, err := os.Stat(dir); os.IsNotExist(err) {
+		err = os.Mkdir(dir, 0755)
+		if err != nil {
+			panic(err)
+		}
+	}
+}
+
 func main() {
 	servePtr := flag.Bool("serve", false, "start the server")
 	mapPtr := flag.String("map", "", "generate a map image")
 	portPtr := flag.String("port", "8080", "port to serve on")
 	flag.Parse()
+
+	// ensure output directory exists
+	ensureDirExists("./output")
 
 	if *servePtr {
 		r := mux.NewRouter()
