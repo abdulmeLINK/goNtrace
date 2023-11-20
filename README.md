@@ -20,6 +20,7 @@ git clone https://github.com/abdulmeLINK/goNtrace.git
 Navigate to the project directory and build the project:
 
 ```
+go mod vendor
 cd goNtrace/cmd/goNtrace
 go build
 ```

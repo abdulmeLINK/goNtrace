@@ -4,11 +4,14 @@ go 1.16
 
 require (
 	github.com/abdulmeLINK/mtr v0.0.0-20231108014240-bf31c8580052
+	github.com/buger/goterm v1.0.4 // indirect
 	github.com/fatih/color v1.16.0 // indirect
 	github.com/flopp/go-staticmaps v0.0.0-20220221183018-c226716bec53
 	github.com/golang/geo v0.0.0-20210211234256-740aa86cb551
 	github.com/gorilla/mux v1.8.1
 	github.com/hokaccha/go-prettyjson v0.0.0-20211117102719-0474bc63780f
+	github.com/spf13/cobra v1.8.0 // indirect
+	github.com/tonobo/mtr v0.1.0 // indirect
 	github.com/yuin/goldmark v1.6.0 // indirect
 	golang.org/x/tools v0.15.0 // indirect
 )
